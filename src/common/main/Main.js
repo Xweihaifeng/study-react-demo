@@ -1,7 +1,8 @@
 import React from 'react';
+import Nav from './Nav'
 import './Main.css';
 
-class Main extends React.Component {
+export default class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,29 +10,48 @@ class Main extends React.Component {
                 'zhangsan',
                 'lisi',
                 'wangwu'
-            ]
+            ],
+            inputVal: ''
         }
     }
 
     isClick() {
         this.setState({
-            list: [...this.state.list, 'hello world!']
+            list: [...this.state.list, this.state.inputVal],
+            inputVal: ''
         })
+    }
+
+    isInput(e) {
+        this.setState({
+            inputVal: e.target.value
+        })
+    }
+
+    isClickDel(e) {
+        const list = [...this.state.list];
+        list.splice(e, 1);
+        this.setState({ list })
     }
 
     render() {
         return (
             <div className="Main">
-                <input />
+                <input onChange={ this.isInput.bind(this) } value={ this.state.inputVal } />
                 <button onClick={ this.isClick.bind(this) }>添加</button>
-                <ul>
-                    {
-                        this.state.list.map((v,k) => <li key={k}>{v}</li>)
-                    }
-                </ul>
+                <div>
+                    <ul className="Nav">
+                        {
+                            this.state.list.map((v,k) => <Nav isDelete={ this.isClickDel.bind(this) } content={ v } key={ k } index={ k } />)
+                        }
+                    </ul>
+                    <ul className="Nav">
+                        {
+                            this.state.list.map((v,k) => <li key={k}>{v} <span onClick={ this.isClickDel.bind(this, k) }>&times;</span></li>)
+                        }
+                    </ul>
+                </div>
             </div>
         )
-    };
+    }
 }
-
-export default Main;
