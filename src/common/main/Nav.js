@@ -13,9 +13,9 @@ export default class Nav extends React.Component {
     render() {
         return (
             <li>
-				{ this.props.content }
-				{<span onClick={ this.isClickDel.bind(this, this.props.index) }>&times;</span>}
-			</li>
+                { this.props.content}
+                {<span onClick={this.isClickDel.bind(this, this.props.index)}>&times;</span>}
+            </li>
         )
     }
 }
