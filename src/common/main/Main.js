@@ -45,11 +45,6 @@ export default class Main extends React.Component {
                             this.state.list.map((v, k) => <Nav isDelete={this.isClickDel.bind(this)} content={v} key={k} index={k} />)
                         }
                     </ul>
-                    <ul className="Nav">
-                        {
-                            this.state.list.map((v, k) => <li key={k}>{v} <span onClick={this.isClickDel.bind(this, k)}>&times;</span></li>)
-                        }
-                    </ul>
                 </div>
             </div>
         )
