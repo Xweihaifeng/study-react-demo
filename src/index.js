@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './common/base.css';
 import './index.css';
-import Home from './common/main/Home';
-// import Main from './common/main/Main';
+import Main from './common/main/Main';
 import * as serviceWorker from './config//serviceWorker';
 
-ReactDOM.render(<Home />, document.getElementById('root'));
+ReactDOM.render(<Main />, document.getElementById('root'));
 serviceWorker.unregister();
