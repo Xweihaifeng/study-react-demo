@@ -9,16 +9,16 @@ import {
 
 class Home extends React.Component {
     render() {
-        return (<div>
-            Home
-        </div>);
+        return (
+            <section> Home </section>
+        );
     }
 }
 
 class About extends React.Component {
     render() {
         return (
-            <div>About</div>
+            <section>About</section>
         );
     }
 }
@@ -42,10 +42,26 @@ class Menu extends React.Component {
 class Content extends React.Component {
     render() {
         return (
-            <div>
+            <section>
                 <h3> ID: {this.props.match.params.id}</h3>
                 <h5>match.url: {this.props.match.url}</h5>
-            </div>
+            </section>
+        );
+    }
+}
+
+class Address extends React.Component {
+    render() {
+        return (
+            <aside>
+                <div className={'foot-left'}>Logo</div>
+                <ul className={'foot-center'}>
+                    <li><Link to="/home">首页</Link></li>
+                    <li><Link to="/about">关于</Link></li>
+                    <li><Link to="/content">Content</Link></li>
+                </ul>
+                <div className={'foot-right'}>Admin</div>
+            </aside>
         );
     }
 }
@@ -56,10 +72,15 @@ class Headers extends React.Component {
             <HashRouter>
                 <header id={'Header'}>
                     <Route path="/" component={Menu} />
+                </header>
+                <article id={'Content'}>
                     <Route path="/home" component={Home} />
                     <Route path="/about" component={About} />
                     <Route path="/:id" component={Content} />
-                </header>
+                </article>
+                <footer id={'Footer'}>
+                    <Route path="/" component={Address} />
+                </footer>
             </HashRouter>
         );
     }
