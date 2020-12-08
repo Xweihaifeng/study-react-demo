@@ -1,10 +1,10 @@
 @charset "utf-8";
 ::-webkit-scrollbar{width:0!important;}
-*{font-family:'微软雅黑';box-sizing:border-box;user-select:none;padding:0;margin:0;}
+*{font-family:'微软雅黑';box-sizing:border-box;user-select:none;padding:0;margin:0;color:#fff;}
 html,body{position:fixed;font-size:12px;margin:0;padding:0;width:100%;height:100%;}
 html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-size-adjust:100%;}
 body{color:#fff;background:linear-gradient(180deg,#006669,#004c4e);background-size:100% 100%;background-repeat:no-repeat;background-attachment:fixed;}
-h1,h2,h3,h4,h5,h6,p,pre,dd{margin:0;font-weight:400;}
+h1,h2,h3,h4,h5,h6,p,pre,dd{margin:0;font-weight:400;color:#fff;}
 pre{font-family:none;white-space:unset;margin:0;font-size:1rem!important;}
 a{display:inline-block;text-decoration:none;}
 ul{padding:0;margin:0;}
@@ -26,15 +26,15 @@ button{outline:none;}
 
 /* 全局公共样式 */
 #root{position:relative;margin:0;padding:0;width:100%;height:100%;}
-#root #Header{position:relative;z-index:10000;width:100%;height:4.5rem;padding:0 1.2rem;background:#005b5d;box-shadow:0 5px 10px #005354;}
+#root #Header{position:relative;width:100%;height:4.5rem;padding:0 1.2rem;background:#005b5d;box-shadow:0 5px 10px #005354;}
 #root #Header>aside{position:relative;width:100%;height:100%;display:flex;justify-content:center;align-items:center;font-size:1rem;}
 #root #Header>aside>.nav-left{position:absolute;left:0;}
 #root #Header>aside>.nav-center{display:flex;}
 #root #Header>aside>.nav-center>li{transform:skewX(-30deg) translateX(-5px);line-height:2rem;}
 #root #Header>aside>.nav-center>li>a{padding:1rem 2rem;color:#fff;}
 #root #Header>aside>.nav-right{position:absolute;right:0;}
-#root #Content {position:relative;z-index:9998;width:100%;min-height:calc(100% - 9rem);overflow:auto;}
-#root #Footer{position:relative;z-index:10000;width:100%;height:4.5rem;padding:0 1.2rem;background:#005b5d;box-shadow:0 -5px 10px #005354;}
+#root #Content {position:relative;width:100%;min-height:calc(100% - 9rem);max-height:calc(100% - 9rem);padding:1rem 1.2rem;overflow:auto;color:#fff;}
+#root #Footer{position:relative;width:100%;height:4.5rem;padding:0 1.2rem;background:#005b5d;box-shadow:0 -5px 10px #005354;}
 #root #Footer>aside{position:relative;width:100%;height:100%;display:flex;justify-content:center;align-items:center;font-size:1rem;}
 #root #Footer>aside>.foot-left{position:absolute;left:0;}
 #root #Footer>aside>.foot-center{display:flex;}
