@@ -4,9 +4,6 @@ export default class Pageindex extends React.Component {
         super(props);
         this.state = {};
     }
-    isClickDel(e) {
-        console.log(e);
-    }
     render() {
         return (
             <section>

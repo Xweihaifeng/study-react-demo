@@ -1,9 +1,9 @@
 import React from 'react'
 // eslint-disable-next-line no-unused-vars
-import { Router, Route, IndexRoute, browserHistory, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, HashRouter, browserHistory, Link } from 'react-router-dom'
 
 // 引入所有基础配置
-import '../config/globalConfig'
+// import '../config/globalConfig'
 
 import Demo1 from '../page'
 import Tabble from '../page/tabble'
@@ -24,9 +24,9 @@ export default class RouteMap extends React.Component {
     }
     render() {
         return (
-            <Router history={this.props.history} onUpdate={this.updateHandle.bind(this)}>
-                <Route path='/' component={Demo1}>
-                    {/* <IndexRoute component={Tabble} /> */}
+            <HashRouter history={this.props.history} onUpdate={this.updateHandle.bind(this)}>
+                {/* <Route path='/' component={Demo1}></Route> */}
+                <Demo1>
                     <Route path='/tabble' component={Tabble}></Route>
                     <Route path='/label' component={Label}></Route>
                     <Route path='/form' component={Form}></Route>
@@ -37,8 +37,8 @@ export default class RouteMap extends React.Component {
                     <Route path='/editor' component={WangEditor}></Route>
                     <Route path='/select' component={Select}></Route>
                     <Route path='/redux' component={Redux}></Route>
-                </Route>
-            </Router>
+                </Demo1>
+            </HashRouter>
         )
     }
 }
